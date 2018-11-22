@@ -3,6 +3,7 @@
 #
 
 docker run \
+    -d \
     --publish=7474:7474 \
     --publish=7687:7687 \
     --volume=$HOME/neo4j/data/graphileonApplication:/data \
@@ -10,6 +11,7 @@ docker run \
     neo4j
 
 docker run \
+    -d \
     --publish=7475:7474 \
     --publish=7688:7687 \
     --volume=$HOME/neo4j/data/graphileonDatastore:/data \
