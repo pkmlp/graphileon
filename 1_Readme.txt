@@ -26,7 +26,7 @@ Zugriff auf das GUI des neo4j Containers graphileonApplication im Webbrowser mit
     http://localhost:7474
 
 Zugriff auf das GUI des neo4j Containers graphileonDatastore im Webbrowser mit
-    http://localhost:7474
+    http://localhost:7475
 
 Zugriff auf Graphileon App im Webbrowser mit
     http://localhost:3001
