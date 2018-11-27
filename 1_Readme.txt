@@ -80,3 +80,7 @@ Notes:
 
         > /home/pkmlp/myTools/dockerCleanup
 
+
+    To start all with docker-compose:
+
+        > docker-compose up 
