@@ -61,14 +61,14 @@ Graphileon User Credentials (in this VM)
 
 Notes:
 
-   Datastores are located in Folder neo4j/data of the user
-   (to keep them persistent if a container will be deleted). 
+    Datastores are located in Folder neo4j/data of the user
+    (to keep them persistent if a container will be deleted). 
 
         > /home/pkmlp/neo4j/data/graphileonApplication  --> Datastore for Graphileon App
         > /home/pkmlp/neo4j/data/graphileonDatastore    --> Datastore for Business Data 
 
 
-   Delete persistent Neo4j Datastores: 
+    Delete persistent Neo4j Datastores: 
    
         > sudo rm -r /home/pkmlp/neo4j/data/graphileonApplication 
         > sudo rm -r /home/pkmlp/neo4j/data/graphileonDatastore       
@@ -76,7 +76,7 @@ Notes:
             !!!!!!!!!! USE CAREFULLY !!!!!!!!!!
 
 
-   To clean up:
+    To clean up:
 
         > /home/pkmlp/myTools/dockerCleanup
 
