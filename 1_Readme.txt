@@ -1,5 +1,5 @@
 #
-# neo4j Graph Database Containers mit Graphileon UI in VM
+# Neo4j Graph Database Containers mit Graphileon UI 
 #
 
 docker run \
@@ -18,9 +18,10 @@ docker run \
     --name=graphileonDatastore  \
     neo4j
 
-    By default Neo4j requires authentication. 
-    You have to login with neo4j/neo4j at the 
-    first connection and set a new password.
+
+By default Neo4j requires authentication. 
+You have to login with neo4j/neo4j at the 
+first connection and set a new password.
 
 
 
@@ -54,3 +55,4 @@ Hinweise:
    Um die gestoppten Container, die Images und alle anderen Docker-Units wegzuräumen:
 
         > /home/pkmlp/myTools/dockerCleanup
+
