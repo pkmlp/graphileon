@@ -1,0 +1,12 @@
+
+The best way is to send an e-mail to issues@graphileon.com. 
+I will also invite you to our slack channel.
+
+The issue you reported is dus to a bug in Neo4j 3.5.0 . I reported it a couple of days ago ... 
+https://github.com/neo4j/neo4j/issues/12097
+
+
+Workaround: 
+Change the cypher statement in node with internal id 19. 
+You can use the Node lookup button in the top-left panel.  
+Change TIMESTAMP() to timestamp() and it should work.
