@@ -3,16 +3,16 @@ services:
   graphileonApplication: 
       image: neo4j:latest
       container_name: graphileonApplication
-      volumes:
-          - /home/pkmlp/neo4j/data/graphileonApplication:/data
       ports: 
           - "7474:7474" 
           - "7687:7687" 
+      volumes:
+          - /home/pkmlp/neo4j/data/graphileonApplication:/data
   graphileonDatastore: 
       image: neo4j:latest
       container_name: graphileonDatastore
-      volumes:
-          - /home/pkmlp/neo4j/data/graphileonDatastore:/data
       ports: 
           - "7475:7474" 
           - "7688:7687" 
+      volumes:
+          - /home/pkmlp/neo4j/data/graphileonDatastore:/data
