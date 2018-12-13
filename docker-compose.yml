@@ -1,6 +1,8 @@
 version: '2'
+
 services:
-  graphileonApplication: 
+
+    graphileonApplication: 
       image: neo4j:latest
       container_name: graphileonApplication
       ports: 
@@ -8,7 +10,8 @@ services:
           - "7687:7687" 
       volumes:
           - /home/pkmlp/neo4j/data/graphileonApplication:/data
-  graphileonDatastore: 
+
+    graphileonDatastore: 
       image: neo4j:latest
       container_name: graphileonDatastore
       ports: 
@@ -16,3 +19,4 @@ services:
           - "7688:7687" 
       volumes:
           - /home/pkmlp/neo4j/data/graphileonDatastore:/data
+          - /home/pkmlp/neo4j/data/import:/var/lib/neo4j/import
