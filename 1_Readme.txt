@@ -46,13 +46,13 @@ first connection and set a new password.
 #
 
 Zugriff auf das GUI des neo4j Containers graphileonApplication im Webbrowser mit 
-    http://localhost:7474
+    http://localhost:7474    --> Server Connect: neo4j / pkmlp
 
 Zugriff auf das GUI des neo4j Containers graphileonDatastore im Webbrowser mit
-    http://localhost:7475
+    http://localhost:7475    --> Server Connect: neo4j / pkmlp
 
 Zugriff auf Graphileon App im Webbrowser mit
-    http://localhost:3001
+    http://localhost:3001 
 
 Graphileon User Credentials (in this VM)
     pkmlp / pkmlp
