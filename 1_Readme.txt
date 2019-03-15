@@ -83,4 +83,5 @@ Notes:
 
     To start all with docker-compose:
 
-        > docker-compose up 
+        > docker-compose up -d
+
