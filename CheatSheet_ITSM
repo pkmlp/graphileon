@@ -1,0 +1,112 @@
+
+//CLEAR BROWSER
+:clear
+
+
+
+//DELETE ALL
+MATCH(n) DETACH DELETE n
+
+
+
+//CREATE CONSTRAINT ComponentID
+CREATE CONSTRAINT ON (c:Complaint) ASSERT c.ComponentID IS UNIQUE
+
+
+
+//CREATE CONSTRAINT ComponentName
+CREATE CONSTRAINT ON (c:Complaint) ASSERT c.ComponentName IS UNIQUE
+
+
+
+//LOAD COMPONENTS
+LOAD CSV WITH HEADERS FROM "file:///media/sf_SharedFolder/ComponentCatalog.csv" AS csvLine FIELDTERMINATOR ';'
+CREATE (c:component { name: csvLine.ComponentName, 
+                     ComponentName: csvLine.ComponentName, 
+                     ComponentID: toInteger(csvLine.ComponentID),
+                     Monitoring: COALESCE(csvLine.Monitoring, 'NOT SET'),
+                     DomainIpPort: COALESCE(csvLine.DomainIpPort, 'NOT SET'),
+                     Protocol: COALESCE(csvLine.Protocol, 'NOT SET'),
+                     ServiceGroup: csvLine.ServiceGroup, 
+                     ServiceName: csvLine.ServiceName, 
+                     ServiceID: toInteger(csvLine.ServiceID)
+                    }
+       ) ;
+
+
+
+//LOAD DEPENDENCIES
+LOAD CSV WITH HEADERS FROM "file:///media/sf_SharedFolder/ComponentDependencies.csv" AS csvLine FIELDTERMINATOR ';'
+MATCH (a:component { ComponentID: toInteger(csvLine.SolutionID) })
+MATCH (b:component { ComponentID: toInteger(csvLine.DependsOnID) })
+CREATE (a)-[:DEPENDS_ON {title:csvLine.Title}]->(b);
+
+
+
+//SHOW ALL
+MATCH(n) RETURN n
+
+
+
+//SHOW IT SHOP
+MATCH (n:component {ServiceName:"IT Shop" }) RETURN n
+
+
+
+//SHOW POLYBOX
+MATCH (n:component {ServiceName:"Polybox" }) RETURN n
+
+
+
+//SHOW LTS
+MATCH (c:component)
+WHERE c.ServiceName CONTAINS 'LTS'
+return c;
+
+
+
+//SHOW CDS
+MATCH (c:component)
+WHERE c.ServiceName CONTAINS 'CDS'
+return c;
+
+
+
+//SHOW NAS
+MATCH (c:component)
+WHERE c.ServiceName CONTAINS 'NAS'
+return c;
+
+
+
+//SHOW Backup und Restore
+MATCH (n:component {ServiceName:"Backup und Restore" }) RETURN n
+
+
+
+//SHOW Videoproduktion
+MATCH (c:component)
+WHERE c.ServiceName CONTAINS 'Videoproduktion'
+return c;
+
+
+
+//SHOW Videodistribution
+MATCH (c:component)
+WHERE c.ServiceName CONTAINS 'Videodistribution'
+return c;
+
+
+
+//SHOW MMS Ausleihe
+MATCH (c:component)
+WHERE c.ServiceName CONTAINS 'Ausleihe'
+return c;
+
+
+
+//Show Komponenten anhand Beziehung
+MATCH (n) -[r]-> (m)
+WHERE r.title contains "Videodistribution"
+RETURN n,m,r
+
