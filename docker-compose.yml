@@ -3,7 +3,7 @@ version: '2'
 services:
 
     graphileonApplication: 
-      image: neo4j:latest
+      image: neo4j:3.5
       container_name: graphileonApplication
       ports: 
           - "7474:7474" 
@@ -12,7 +12,7 @@ services:
           - /home/pkmlp/neo4j/data/graphileonApplication:/data
 
     graphileonDatastore: 
-      image: neo4j:latest
+      image: neo4j:3.5
       container_name: graphileonDatastore
       ports: 
           - "7475:7474" 
