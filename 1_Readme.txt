@@ -85,3 +85,10 @@ Notes:
 
         > docker-compose up -d
 
+    To stop all with docker-compose:
+
+        > docker-compose stop
+
+    To cleanup:
+
+        > dockerCleanup
